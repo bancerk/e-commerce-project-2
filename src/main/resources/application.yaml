@@ -1,0 +1,17 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/e-commerce-project-2
+    username: canberk
+    password: bancerk
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      '[hibernate.format_sql]': true
+  application:
+    name: e-commerce-project-2
