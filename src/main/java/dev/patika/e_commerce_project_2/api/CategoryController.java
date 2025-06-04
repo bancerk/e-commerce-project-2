@@ -31,4 +31,12 @@ public class CategoryController {
         this.categoryService.save(saveCategory);
         return ResultHelper.created(this.modelMapper.forResponse().map(saveCategory, CategoryResponse.class));
     }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResultData<CategoryResponse> get(@PathVariable("id") int id) {
+        Category category = this.categoryService.get(id);
+        CategoryResponse categoryResponse = this.modelMapper.forResponse().map(category, CategoryResponse.class);
+        return ResultHelper.success(categoryResponse);
+    }
 }
