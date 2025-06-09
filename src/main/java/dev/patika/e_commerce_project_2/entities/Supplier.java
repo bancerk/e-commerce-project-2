@@ -5,9 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "suppliers")
 public class Supplier {
@@ -28,4 +30,7 @@ public class Supplier {
 
     @Column(name = "supplier_mail")
     private String contactMail;
+
+    @OneToMany(mappedBy = "supplier")
+    private List<Product> products;
 }
